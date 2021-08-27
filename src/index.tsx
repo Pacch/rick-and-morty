@@ -4,11 +4,14 @@ import App from "routes";
 import reportWebVitals from "./reportWebVitals";
 import "./Styles/configBaseTailwind";
 import GlobalStyles from "./Styles/GlobalStyles";
+import QueryProvider from "State/QueryProvider";
 
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyles>
-      <App />
+      <QueryProvider>
+        <App />
+      </QueryProvider>
     </GlobalStyles>
   </React.StrictMode>,
   document.getElementById("root")
