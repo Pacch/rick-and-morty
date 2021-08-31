@@ -8,7 +8,10 @@ const LoadingCards = () => {
 
   return (
     <div
-      className={tw`grid justify-center gap-4 grid-cols-[repeat(auto-fill,minmax(240px,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(300px,1fr))]  xl:grid-cols-[repeat(auto-fill,minmax(360px,1fr))]`}
+      className={tw`grid justify-center gap-4 
+      grid-cols-[repeat(auto-fill,minmax(240px,1fr))] 
+      lg:grid-cols-[repeat(auto-fill,minmax(300px,1fr))]  
+      xl:grid-cols-[repeat(auto-fill,minmax(360px,1fr))]`}
     >
       {ITEMS_LOADER.map((item: number) => {
         return <LoadingCard key={item} />;

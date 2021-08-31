@@ -45,10 +45,14 @@ const SearchForm: React.FC<IProps> = ({
   return (
     <form onSubmit={handleSubmit} className={tw`mb-4`}>
       <div
-        className={tw`grid gap-4 bg-white rounded-xl  transform transition duration-500 justify-center grid-cols-[repeat(auto-fill,minmax(320px,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(420px,1fr))]`}
+        className={tw`grid gap-4 bg-white rounded-xl 
+        transform transition duration-500 justify-center 
+        grid-cols-[repeat(auto-fill,minmax(320px,1fr))] 
+        sm:grid-cols-[repeat(auto-fill,minmax(420px,1fr))]`}
       >
         <input
-          className={tw`flex bg-gray-100 px-4 py-2 space-x-4 rounded-lg group bg-gray-100 outline-none w-full focus:ring-2 focus:ring-blue-600`}
+          className={tw`flex bg-gray-100 px-4 py-2 space-x-4 rounded-lg group 
+          bg-gray-100 outline-none w-full focus:ring-2 focus:ring-blue-600`}
           type="text"
           placeholder="Search by name"
           onChange={(e: React.FormEvent<HTMLInputElement>) =>

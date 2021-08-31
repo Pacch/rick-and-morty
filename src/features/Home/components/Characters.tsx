@@ -44,7 +44,10 @@ const Characters: React.FC<IProps> = ({
         onChangeCurrentPage={(value) => handleChangeCurrentPage(value)}
       />
       <div
-        className={tw`flex-grow grid justify-center gap-4 grid-cols-[repeat(auto-fill,minmax(240px,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(300px,1fr))]  xl:grid-cols-[repeat(auto-fill,minmax(360px,1fr))]`}
+        className={tw`flex-grow grid justify-center gap-4 
+        grid-cols-[repeat(auto-fill,minmax(240px,1fr))] 
+        lg:grid-cols-[repeat(auto-fill,minmax(300px,1fr))]  
+        xl:grid-cols-[repeat(auto-fill,minmax(360px,1fr))]`}
       >
         {characters?.map((character) => {
           return <CardItem {...character} key={character.id} />;
