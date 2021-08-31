@@ -5,20 +5,25 @@ const Setup = setup({
     fontFamily: {
       sans: ["Roboto", "sans-serif"],
     },
+    boxShadow: {
+      card: "0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14)",
+    },
     extend: {
       fontSize: {
         xsm: "8px",
         sm: "10px",
         md: "12px",
         lg: "14px",
-        xlg: "24px",
+        xlg: "20px",
+        xxlg: "20px",
       },
       lineHeight: {
-        xsm: "12px",
-        sm: "16px",
-        md: "16px",
-        lg: "16px",
-        xlg: "32px",
+        xsm: "8px",
+        sm: "10px",
+        md: "12px",
+        lg: "14px",
+        xlg: "20px",
+        xxlg: "20px",
       },
       spacing: {
         none: "0",
