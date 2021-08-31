@@ -1,4 +1,4 @@
-import useScrollTop from "Hooks/useScrollTop";
+import useScrollTop from "hooks/useScrollTop";
 import { useState, useEffect } from "react";
 import useGetCharacters from "./useGetCharacters";
 

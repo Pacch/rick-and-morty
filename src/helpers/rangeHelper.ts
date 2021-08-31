@@ -6,8 +6,7 @@ export const createRange = ({
   start?: number;
 }) => {
   const createArray = Array.from(Array(end).keys());
-  const result = [...createArray].map((item: number) => item + start);
-  return result;
+  return [...createArray].map((item: number) => item + start);
 };
 
 export default createRange;

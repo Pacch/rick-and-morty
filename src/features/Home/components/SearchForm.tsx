@@ -9,20 +9,20 @@ interface ISelect {
 }
 
 interface IProps {
-  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
-  handleChangeName: (value: string) => void;
-  handleChangeSelect: (e: ISelect | null | undefined) => void;
-  handleCleanForm: () => void;
+  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  onChangeName: (value: string) => void;
+  onChangeSelect: (e: ISelect | null | undefined) => void;
+  onCleanForm: () => void;
   isLoading: boolean;
   name: string;
   status: string | null;
 }
 
 const SearchForm: React.FC<IProps> = ({
-  handleSubmit = () => {},
-  handleChangeName = () => {},
-  handleChangeSelect = () => {},
-  handleCleanForm = () => {},
+  onSubmit = () => {},
+  onChangeName = () => {},
+  onChangeSelect = () => {},
+  onCleanForm = () => {},
   isLoading,
   name,
   status,
@@ -35,15 +35,15 @@ const SearchForm: React.FC<IProps> = ({
     { value: "unknown", label: "unknown" },
   ];
 
-  const handleResetForm = () => {
+  const onResetForm = () => {
     selectInputRef?.current.select.clearValue();
-    handleCleanForm();
+    onCleanForm();
   };
 
   const isDisabledButton = !(!!name.length || !!status?.length);
 
   return (
-    <form onSubmit={handleSubmit} className={tw`mb-4`}>
+    <form onSubmit={onSubmit} className={tw`mb-4`}>
       <div
         className={tw`grid gap-4 bg-white rounded-xl 
         transform transition duration-500 justify-center 
@@ -56,7 +56,7 @@ const SearchForm: React.FC<IProps> = ({
           type="text"
           placeholder="Search by name"
           onChange={(e: React.FormEvent<HTMLInputElement>) =>
-            handleChangeName(e.currentTarget.value)
+            onChangeName(e.currentTarget.value)
           }
           value={name}
         />
@@ -73,7 +73,7 @@ const SearchForm: React.FC<IProps> = ({
               placeholder="Filter by status"
               isClearable={true}
               className={tw`w-full`}
-              onChange={handleChangeSelect}
+              onChange={onChangeSelect}
             />
           </div>
           <div className={tw`grid gap-2 grid-flow-col`}>
@@ -89,7 +89,7 @@ const SearchForm: React.FC<IProps> = ({
               <Button
                 isLoading={isLoading}
                 iconName="clear"
-                onClick={handleResetForm}
+                onClick={onResetForm}
                 disabled={isDisabledButton}
               />
             </div>

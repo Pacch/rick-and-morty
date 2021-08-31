@@ -25,7 +25,7 @@ const useGetCharacters = ({ page = 1, name, status }: IParams) => {
     staleTime: 60 * 1000 * 60 * 24,
     keepPreviousData: true,
   };
-  const result = useQuery<{ pages: number; characters: ICharacters[] }, Error>(
+  return useQuery<{ pages: number; characters: ICharacters[] }, Error>(
     [QUERYKEY, page],
     () =>
       domain.get_characters_use_case.execute({
@@ -37,7 +37,6 @@ const useGetCharacters = ({ page = 1, name, status }: IParams) => {
       }),
     CONFIG_CACHE
   );
-  return result;
 };
 
 export default useGetCharacters;

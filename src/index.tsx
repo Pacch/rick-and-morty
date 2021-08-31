@@ -2,9 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "routes";
 import reportWebVitals from "./reportWebVitals";
-import "./Styles/configBaseTailwind";
-import GlobalStyles from "./Styles/GlobalStyles";
-import QueryProvider from "State/QueryProvider";
+import "./styles/configBaseTailwind";
+import GlobalStyles from "./styles/GlobalStyles";
+import QueryProvider from "state/QueryProvider";
 
 ReactDOM.render(
   <React.StrictMode>

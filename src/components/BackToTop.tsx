@@ -1,6 +1,6 @@
 import { tw } from "twind";
 import Icon from "components/Icon";
-import useScrollTop from "Hooks/useScrollTop";
+import useScrollTop from "hooks/useScrollTop";
 import { useEffect, useState } from "react";
 
 const BackToTop: React.FC = () => {

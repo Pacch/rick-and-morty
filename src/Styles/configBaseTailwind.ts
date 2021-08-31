@@ -9,6 +9,11 @@ const Setup = setup({
       card: "0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14)",
     },
     extend: {
+      colors: {
+        dead: "#97ce4c",
+        alive: "#f0e14a",
+        unknown: "#e4a788",
+      },
       fontSize: {
         xsm: "8px",
         sm: "10px",

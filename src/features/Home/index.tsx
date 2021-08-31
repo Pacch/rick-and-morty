@@ -23,10 +23,10 @@ const Home: React.FC = () => {
   return (
     <Layout>
       <SearchForm
-        handleChangeName={handleChangeName}
-        handleSubmit={handleSubmit}
-        handleChangeSelect={handleChangeSelect}
-        handleCleanForm={handleCleanForm}
+        onChangeName={handleChangeName}
+        onSubmit={handleSubmit}
+        onChangeSelect={handleChangeSelect}
+        onCleanForm={handleCleanForm}
         isLoading={isLoadingFetching}
         name={name}
         status={status}
