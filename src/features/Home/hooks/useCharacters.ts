@@ -38,8 +38,7 @@ const useCharacters = () => {
       setCharacters(data!.characters);
       setTotalPages(data!.pages);
     }
-    // eslint-disable-next-line
-  }, [isLoadingFetching]);
+  }, [isLoadingFetching, isError, data]);
 
   const handleChangeCurrentPage = (newCurrentPage: number) => {
     handleScroll();
@@ -72,8 +71,7 @@ const useCharacters = () => {
       refetch();
       setGetData(false);
     }
-    // eslint-disable-next-line
-  }, [getData]);
+  }, [getData, refetch]);
 
   return {
     characters,
