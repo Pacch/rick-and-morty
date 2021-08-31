@@ -12,7 +12,10 @@ export default class HTTPCharacterRepository implements ICharacterRepository {
     this._fetcher = fetcher;
   }
 
-  public async getCharacters(params: {
+  public async getCharacters({
+    page,
+    filter,
+  }: {
     page: number;
     filter: {
       name?: string | null;
@@ -22,18 +25,16 @@ export default class HTTPCharacterRepository implements ICharacterRepository {
     pages: number;
     characters: CharacterInfoEntity[];
   }> {
-    const { page } = params;
-    const { name, status } = params.filter;
-
-    const pagination = page ? `?page=${page}` : "";
-    const nameFilter = name ? `&name=${name}` : "";
-    const statusFilter = status ? `&status=${status}` : "";
+    const { name, status } = filter;
+    const queryParams = {
+      page,
+      name: name || null,
+      status,
+    };
 
     const {
       data: { results: Characters, info },
-    } = await this._fetcher.request.get(
-      `/character/${pagination}${nameFilter}${statusFilter}`
-    );
+    } = await this._fetcher.request.get("/character", { params: queryParams });
 
     const charactersEntities = Characters.map(
       (character: ICharacterInfoParams) => {
