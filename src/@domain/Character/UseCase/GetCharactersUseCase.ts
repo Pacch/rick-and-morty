@@ -1,5 +1,11 @@
 import ICharacterRepository from "../Repositories/ICharacterRepository";
 
+type GetCharactersProps = {
+  page: number;
+  name?: string;
+  status?: "alive" | "dead" | "unknown" | null;
+};
+
 export default class GetCharactersUseCase {
   private _repository: ICharacterRepository;
 
@@ -7,9 +13,17 @@ export default class GetCharactersUseCase {
     this._repository = repository;
   }
 
-  public async execute() {
-    const entities = await this._repository.getCharacters();
-    const entitiesObj = entities.map((entity) => entity.toJSON());
-    return entitiesObj;
+  public async execute({ page, name, status }: GetCharactersProps) {
+    const { characters, pages } = await this._repository.getCharacters({
+      page,
+      name,
+      status,
+    });
+    const entitiesObj = characters.map((character) => character.toJSON());
+
+    return {
+      pages,
+      characters: entitiesObj,
+    };
   }
 }

@@ -12,10 +12,22 @@ export default class HTTPCharacterRepository implements ICharacterRepository {
     this._fetcher = fetcher;
   }
 
-  public async getCharacters(): Promise<CharacterInfoEntity[]> {
+  public async getCharacters(params: {
+    page: number;
+    name?: string | null;
+    status?: "alive" | "dead" | "unknown" | null;
+  }): Promise<{
+    pages: number;
+    characters: CharacterInfoEntity[];
+  }> {
     const {
-      data: { results: Characters },
-    } = await this._fetcher.request.get("/character");
+      data: { results: Characters, info },
+    } = await this._fetcher.request.get(
+      `/character/${params?.page ? `?page=${params.page}` : ""}${
+        params.name ? `&name=${params.name}` : ""
+      }${params.status ? `&status=${params.status}` : ""}
+      `
+    );
 
     const charactersEntities = Characters.map(
       (character: ICharacterInfoParams) => {
@@ -24,6 +36,9 @@ export default class HTTPCharacterRepository implements ICharacterRepository {
       }
     );
 
-    return charactersEntities;
+    return {
+      pages: info?.pages,
+      characters: charactersEntities,
+    };
   }
 }
