@@ -34,10 +34,11 @@ const useCharacters = () => {
   const isLoadingFetching = isLoading || isFetching;
 
   useEffect(() => {
-    if (!isLoading && !isFetching && !isError) {
+    if (!isLoadingFetching && !isError) {
       setCharacters(data!.characters);
       setTotalPages(data!.pages);
     }
+    // eslint-disable-next-line
   }, [isLoadingFetching]);
 
   const handleChangeCurrentPage = (newCurrentPage: number) => {
@@ -71,6 +72,7 @@ const useCharacters = () => {
       refetch();
       setGetData(false);
     }
+    // eslint-disable-next-line
   }, [getData]);
 
   return {
