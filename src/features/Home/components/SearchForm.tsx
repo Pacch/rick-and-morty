@@ -14,7 +14,6 @@ interface IProps {
   handleChangeSelect: (e: ISelect | null | undefined) => void;
   handleCleanForm: () => void;
   isLoading: boolean;
-  isError: boolean;
   name: string;
   status: string | null;
 }
@@ -25,7 +24,6 @@ const SearchForm: React.FC<IProps> = ({
   handleChangeSelect = () => {},
   handleCleanForm = () => {},
   isLoading,
-  isError,
   name,
   status,
 }) => {

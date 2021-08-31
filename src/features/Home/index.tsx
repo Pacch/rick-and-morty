@@ -28,7 +28,6 @@ const Home: React.FC = () => {
         handleChangeSelect={handleChangeSelect}
         handleCleanForm={handleCleanForm}
         isLoading={isLoadingFetching}
-        isError={isError}
         name={name}
         status={status}
       />
