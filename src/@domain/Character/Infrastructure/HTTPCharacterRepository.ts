@@ -14,8 +14,10 @@ export default class HTTPCharacterRepository implements ICharacterRepository {
 
   public async getCharacters(params: {
     page: number;
-    name?: string | null;
-    status?: "alive" | "dead" | "unknown" | null;
+    filter: {
+      name?: string | null;
+      status?: "alive" | "dead" | "unknown" | null;
+    };
   }): Promise<{
     pages: number;
     characters: CharacterInfoEntity[];
@@ -24,8 +26,8 @@ export default class HTTPCharacterRepository implements ICharacterRepository {
       data: { results: Characters, info },
     } = await this._fetcher.request.get(
       `/character/${params?.page ? `?page=${params.page}` : ""}${
-        params.name ? `&name=${params.name}` : ""
-      }${params.status ? `&status=${params.status}` : ""}
+        params.filter.name ? `&name=${params.filter.name}` : ""
+      }${params.filter.status ? `&status=${params.filter.status}` : ""}
       `
     );
 
