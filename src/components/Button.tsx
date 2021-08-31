@@ -14,7 +14,7 @@ const Button: React.FC<IProps> = ({
   isLoading,
   iconName,
   type = "button",
-  onClick = () => {},
+  onClick = () => null,
   disabled,
   children,
 }) => {

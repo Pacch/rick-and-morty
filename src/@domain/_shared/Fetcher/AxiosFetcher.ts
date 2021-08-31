@@ -1,5 +1,4 @@
-import { AxiosInstance } from "axios";
-import axios from "axios";
+import axios, { AxiosInstance } from "axios";
 import FetcherInput from "./FetcherInput";
 
 export default class AxiosFetcher implements FetcherInput {

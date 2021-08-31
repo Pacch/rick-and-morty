@@ -19,10 +19,10 @@ interface IProps {
 }
 
 const SearchForm: React.FC<IProps> = ({
-  onSubmit = () => {},
-  onChangeName = () => {},
-  onChangeSelect = () => {},
-  onCleanForm = () => {},
+  onSubmit,
+  onChangeName,
+  onChangeSelect,
+  onCleanForm,
   isLoading,
   name,
   status,

@@ -22,19 +22,18 @@ export default class HTTPCharacterRepository implements ICharacterRepository {
     pages: number;
     characters: CharacterInfoEntity[];
   }> {
+    const page = params?.page ? `?page=${params.page}` : "";
+    const name = params.filter.name ? `&name=${params.filter.name}` : "";
+    const status = params.filter.status
+      ? `&status=${params.filter.status}`
+      : "";
     const {
       data: { results: Characters, info },
-    } = await this._fetcher.request.get(
-      `/character/${params?.page ? `?page=${params.page}` : ""}${
-        params.filter.name ? `&name=${params.filter.name}` : ""
-      }${params.filter.status ? `&status=${params.filter.status}` : ""}
-      `
-    );
+    } = await this._fetcher.request.get(`/character/${page}${name}${status}`);
 
     const charactersEntities = Characters.map(
       (character: ICharacterInfoParams) => {
-        const entity = characterInfoEntity(character);
-        return entity;
+        return characterInfoEntity(character);
       }
     );
 
