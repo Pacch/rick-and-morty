@@ -1,12 +1,10 @@
 import ICharacterRepository from "../Repositories/ICharacterRepository";
 
-type GetCharactersProps = {
+interface IFilterParams {
   page: number;
-  filter: {
-    name?: string;
-    status?: "alive" | "dead" | "unknown" | null;
-  };
-};
+  name?: string;
+  status?: "alive" | "dead" | "unknown" | null;
+}
 
 export default class GetCharactersUseCase {
   private _repository: ICharacterRepository;
@@ -15,13 +13,11 @@ export default class GetCharactersUseCase {
     this._repository = repository;
   }
 
-  public async execute({ page, filter: { name, status } }: GetCharactersProps) {
+  public async execute({ page, name, status }: IFilterParams) {
     const { characters, pages } = await this._repository.getCharacters({
       page,
-      filter: {
-        name,
-        status,
-      },
+      name,
+      status,
     });
     const entitiesObj = characters.map((character) => character.toJSON());
 

@@ -11,25 +11,15 @@ const Home: React.FC = () => {
     totalPages,
     isError,
     currentPage,
-    name,
-    status,
     handleChangeCurrentPage,
-    handleChangeName,
-    handleSubmit,
-    handleChangeSelect,
-    handleCleanForm,
+    handleChangeFilters,
   } = useCharacters();
 
   return (
     <Layout>
       <SearchForm
-        onChangeName={handleChangeName}
-        onSubmit={handleSubmit}
-        onChangeSelect={handleChangeSelect}
-        onCleanForm={handleCleanForm}
         isLoading={isLoadingFetching}
-        name={name}
-        status={status}
+        onChangeFilters={handleChangeFilters}
       />
       <Characters
         isLoading={isLoadingFetching}

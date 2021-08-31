@@ -1,11 +1,9 @@
 import CharacterInfoEntity from "../Entities/CharacterInfoEntity";
 
-export default interface IPokemonRepository {
+export default interface ICharacterRepository {
   getCharacters(params: {
     page: number;
-    filter: {
-      name?: string;
-      status?: "alive" | "dead" | "unknown" | null;
-    };
+    name?: string;
+    status?: "alive" | "dead" | "unknown" | null;
   }): Promise<{ pages: number; characters: CharacterInfoEntity[] }>;
 }

@@ -15,9 +15,9 @@ interface ICharacters {
 interface IProps {
   isLoading: boolean;
   isError: boolean;
-  characters: ICharacters[] | null;
+  characters?: ICharacters[] | null;
   currentPage: number;
-  totalPages: number;
+  totalPages?: number;
   handleChangeCurrentPage: (value: number) => void;
 }
 
@@ -38,11 +38,6 @@ const Characters: React.FC<IProps> = ({
   }
   return (
     <div className="grid gap-4 h-full flex-grow">
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onChangeCurrentPage={(value) => handleChangeCurrentPage(value)}
-      />
       <div
         className={tw`flex-grow grid justify-center gap-4 
         grid-cols-[repeat(auto-fill,minmax(240px,1fr))] 
@@ -56,7 +51,7 @@ const Characters: React.FC<IProps> = ({
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
-        onChangeCurrentPage={(value) => handleChangeCurrentPage(value)}
+        onChangeCurrentPage={handleChangeCurrentPage}
       />
     </div>
   );

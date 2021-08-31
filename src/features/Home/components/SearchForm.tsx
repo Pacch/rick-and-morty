@@ -1,7 +1,8 @@
 import Select from "react-select";
 import Button from "components/Button";
 import { tw } from "twind";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import IFitlers from "features/types/filtersType";
 
 interface ISelect {
   value: string;
@@ -9,41 +10,50 @@ interface ISelect {
 }
 
 interface IProps {
-  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
-  onChangeName: (value: string) => void;
-  onChangeSelect: (e: ISelect | null | undefined) => void;
-  onCleanForm: () => void;
   isLoading: boolean;
-  name: string;
-  status: string | null;
+  onChangeFilters: (filters: IFitlers) => void;
 }
 
-const SearchForm: React.FC<IProps> = ({
-  onSubmit,
-  onChangeName,
-  onChangeSelect,
-  onCleanForm,
-  isLoading,
-  name,
-  status,
-}) => {
+const optionsSelect = [
+  { value: "alive", label: "alive" },
+  { value: "dead ", label: "dead " },
+  { value: "unknown", label: "unknown" },
+];
+
+const SearchForm: React.FC<IProps> = ({ onChangeFilters, isLoading }) => {
   const selectInputRef = useRef<any>(null);
+  const [name, setName] = useState("");
+  const [status, setStatus] = useState<null | "alive" | "dead" | "unknown">(
+    null
+  );
 
-  const optionsSelect = [
-    { value: "alive", label: "alive" },
-    { value: "dead ", label: "dead " },
-    { value: "unknown", label: "unknown" },
-  ];
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    onChangeFilters({
+      name,
+      status,
+    });
+  };
 
-  const onResetForm = () => {
+  const handleChangeName = (value: string) => {
+    setName(value);
+  };
+
+  const handleChangeSelect = (e: ISelect | null | undefined) => {
+    setStatus(e?.value as null | "alive" | "dead" | "unknown");
+  };
+
+  const handleCleanForm = () => {
+    const EMPTY_VALUES = { name: "", status: null };
     selectInputRef?.current.select.clearValue();
-    onCleanForm();
+    setName(EMPTY_VALUES.name);
+    onChangeFilters(EMPTY_VALUES);
   };
 
   const isDisabledButton = !(!!name.length || !!status?.length);
 
   return (
-    <form onSubmit={onSubmit} className={tw`mb-4`}>
+    <form onSubmit={handleSubmit} className={tw`mb-4`}>
       <div
         className={tw`grid gap-4 bg-white rounded-xl 
         transform transition duration-500 justify-center 
@@ -56,7 +66,7 @@ const SearchForm: React.FC<IProps> = ({
           type="text"
           placeholder="Search by name"
           onChange={(e: React.FormEvent<HTMLInputElement>) =>
-            onChangeName(e.currentTarget.value)
+            handleChangeName(e.currentTarget.value)
           }
           value={name}
         />
@@ -73,7 +83,7 @@ const SearchForm: React.FC<IProps> = ({
               placeholder="Filter by status"
               isClearable={true}
               className={tw`w-full`}
-              onChange={onChangeSelect}
+              onChange={handleChangeSelect}
             />
           </div>
           <div className={tw`grid gap-2 grid-flow-col`}>
@@ -89,7 +99,7 @@ const SearchForm: React.FC<IProps> = ({
               <Button
                 isLoading={isLoading}
                 iconName="clear"
-                onClick={onResetForm}
+                onClick={handleCleanForm}
                 disabled={isDisabledButton}
               />
             </div>

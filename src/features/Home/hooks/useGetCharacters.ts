@@ -16,6 +16,7 @@ interface ICharacters {
 }
 
 const useGetCharacters = ({ page = 1, name, status }: IParams) => {
+  console.log(page, name, status);
   const QUERYKEY = "characters";
   const CONFIG_CACHE = {
     enabled: true,
@@ -26,14 +27,12 @@ const useGetCharacters = ({ page = 1, name, status }: IParams) => {
     keepPreviousData: true,
   };
   return useQuery<{ pages: number; characters: ICharacters[] }, Error>(
-    [QUERYKEY, page],
+    [QUERYKEY, page, name, status],
     () =>
       domain.get_characters_use_case.execute({
         page,
-        filter: {
-          name,
-          status,
-        },
+        name,
+        status,
       }),
     CONFIG_CACHE
   );

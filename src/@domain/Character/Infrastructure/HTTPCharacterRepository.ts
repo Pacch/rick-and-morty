@@ -14,18 +14,16 @@ export default class HTTPCharacterRepository implements ICharacterRepository {
 
   public async getCharacters({
     page,
-    filter,
+    name,
+    status,
   }: {
     page: number;
-    filter: {
-      name?: string | null;
-      status?: "alive" | "dead" | "unknown" | null;
-    };
+    name?: string | null;
+    status?: "alive" | "dead" | "unknown" | null;
   }): Promise<{
     pages: number;
     characters: CharacterInfoEntity[];
   }> {
-    const { name, status } = filter;
     const queryParams = {
       page,
       name: name || null,
