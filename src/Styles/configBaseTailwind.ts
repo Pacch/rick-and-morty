@@ -10,9 +10,9 @@ const Setup = setup({
     },
     extend: {
       colors: {
-        dead: "#97ce4c",
-        alive: "#f0e14a",
-        unknown: "#e4a788",
+        dead: "#000000cc",
+        alive: "#000000cc",
+        unknown: "#000000cc",
       },
       fontSize: {
         xsm: "8px",
@@ -20,7 +20,7 @@ const Setup = setup({
         md: "12px",
         lg: "14px",
         xlg: "20px",
-        xxlg: "20px",
+        xxlg: "24px",
       },
       lineHeight: {
         xsm: "8px",

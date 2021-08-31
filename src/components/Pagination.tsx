@@ -17,7 +17,7 @@ const NavigationButton: React.FC<IPropsNavigation> = ({
     <button
       disabled={disabled}
       onClick={onClick}
-      className={tw` focus:outline-none ${
+      className={tw` w-[60px] h-[60px] bg-green-400 rounded-full border-4 border-white focus:outline-none flex items-center justify-center ${
         disabled ? "opacity-50 cursor-not-allowed" : ""
       }`}
     >
@@ -87,22 +87,24 @@ const Pagination: React.FC<Props> = ({
 
   return (
     <div
-      className={tw`flex items-center justify-center p-6 space-x-6 flex-col sm:flex-row `}
+      className={tw`flex items-center justify-center p-6 space-x-6 flex-col sm:flex-row fixed bottom-0 left-0 w-full`}
+      style={{ backgroundColor: "rgba(255, 255, 255, 0.5)" }}
     >
       <div className={tw`flex items-center space-x-4`}>
         <NavigationButton onClick={handlePrevPage} disabled={currentPage === 1}>
-          <Icon name="chevron-left" size={25} />
+          <Icon name="chevron-left" className={tw`text-white`} size={35} />
         </NavigationButton>
-
-        <span>
-          Page {currentPage} of {totalPages}
-        </span>
+        <div
+          className={tw`bg-white text-green-400 font-black text-xxlg px-4 py-2 rounded-sm`}
+        >
+          {currentPage} - {totalPages}
+        </div>
 
         <NavigationButton
           onClick={handleNextPage}
           disabled={currentPage === totalPages}
         >
-          <Icon name="chevron-right" size={25} />
+          <Icon name="chevron-right" className={tw`text-white`} size={35} />
         </NavigationButton>
       </div>
       <form className={tw`flex items-center`} onSubmit={handleSubmit}>
