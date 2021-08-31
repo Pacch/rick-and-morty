@@ -24,7 +24,7 @@ const Button: React.FC<IProps> = ({
   };
   return (
     <button
-      className={tw`bg-green-400 py-3 px-5 text-white font-semibold rounded-lg transition cursor-pointer flex items-center disabled:opacity-50 disabled:cursor-not-allowed`}
+      className={tw`bg-green-400 py-3 px-5 text-white font-semibold rounded-lg transition cursor-pointer flex items-center disabled:opacity-50 disabled:cursor-not-allowed h-[40px] max-h-[40px]`}
       type={type}
       onClick={handleClick}
       disabled={disabled}
