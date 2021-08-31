@@ -11,7 +11,7 @@ const CardItem: React.FC<IProps> = ({ image, name, status, species }) => {
   return (
     <div className={tw`flex-col`}>
       <div
-        className={tw`border border-primary max-w-[240px] mx-auto rounded-sm shadow-card flex flex-col h-full`}
+        className={tw`border max-w-[240px] mx-auto rounded-sm shadow-card flex flex-col h-full`}
       >
         <img
           src={image}
