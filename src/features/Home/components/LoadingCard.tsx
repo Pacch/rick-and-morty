@@ -4,7 +4,7 @@ import { tw } from "twind";
 const LoaderCard: React.FC = () => {
   return (
     <div
-      className={tw`border border-primary max-w-[240px] h-[280px] mx-auto rounded-sm shadow-card flex flex-col`}
+      className={tw`border max-w-[240px] h-[280px] mx-auto rounded-sm shadow-card flex flex-col`}
     >
       <div className={tw`rounded-t-xsm w-[240px] h-[168px]`}>
         <Loading />
