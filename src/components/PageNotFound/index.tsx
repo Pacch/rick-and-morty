@@ -8,11 +8,12 @@ import { routes } from "routes/routing";
 const PageNotFound: React.FC = () => {
   return (
     <div
+      data-testid="PageNotFound"
       className={tw`h-screen w-screen flex flex-col items-center justify-center space-y-4 px-2`}
     >
       <p className={tw`font-black text-9xl`}>404</p>
       <img src={PageNotFoundImage} alt="page_not_found_image" />
-      <Link to={routes.home.base}>
+      <Link to={routes.home.base} data-testid="LinkButton">
         <Button>Back to home</Button>
       </Link>
       <p className={tw`font-black text-5xl text-center`}>Page not found</p>
