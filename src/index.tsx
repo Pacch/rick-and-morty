@@ -4,7 +4,7 @@ import App from "routes";
 import reportWebVitals from "./reportWebVitals";
 import "./styles/configBaseTailwind";
 import GlobalStyles from "./styles/GlobalStyles";
-import QueryProvider from "state/QueryProvider";
+import QueryProvider from "./state/QueryProvider";
 
 ReactDOM.render(
   <React.StrictMode>
