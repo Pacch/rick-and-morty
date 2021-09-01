@@ -5,7 +5,8 @@ const LoaderCard: React.FC = () => {
   return (
     <div
       data-testid="LoadingCard"
-      className={tw`border max-w-[240px] h-[280px] min-h-[280px] max-h-[280px] mx-auto rounded-sm shadow-2xl flex flex-col`}
+      style={{ backgroundColor: "rgba(0, 0, 0, 0.8)" }}
+      className={tw`border max-w-[240px] h-[280px] min-h-[280px] max-h-[280px] mx-auto rounded-sm shadow-2xl flex flex-col rounded-md`}
     >
       <div className={tw`rounded-t-sm w-[240px] h-[168px]`}>
         <Loading />

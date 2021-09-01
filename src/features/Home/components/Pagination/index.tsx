@@ -103,7 +103,7 @@ const Pagination: React.FC<Props> = ({
           <Icon name="chevron-left" className={tw`text-white`} size={35} />
         </NavigationButton>
         <div
-          className={tw`bg-white text-green-400 font-black text-2xl px-4 py-2 rounded-sm`}
+          className={tw`bg-white text-green-400 font-black text-2xl px-4 py-2 rounded-md`}
         >
           {currentPage} - {totalPages}
         </div>
@@ -118,7 +118,7 @@ const Pagination: React.FC<Props> = ({
       </div>
       <form className={tw`flex items-center`} onSubmit={handleSubmit}>
         <label htmlFor="inputPage">
-          <span className={tw`text-gray-400 mr-[1ch]`}>Go to page</span>
+          <span className={tw`mr-[1ch] text-black font-black`}>Go to page</span>
           <input
             type="text"
             value={currentPageText}
@@ -133,7 +133,7 @@ const Pagination: React.FC<Props> = ({
           disabled={isDisabledGoToPage}
           className={tw`flex items-center`}
         >
-          <span className={tw`mr-[1ch] ml-[1ch]`}>Go</span>
+          <span className={tw`ml-[1ch] font-bold`}>Go</span>
           <Icon name="chevron-right" className={tw`text-black`} />
         </button>
       </form>
