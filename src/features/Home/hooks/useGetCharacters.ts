@@ -8,7 +8,7 @@ interface IParams {
 }
 
 interface ICharacters {
-  id: string;
+  id: number;
   name: string;
   species: string;
   status: string;

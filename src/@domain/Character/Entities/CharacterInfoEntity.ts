@@ -1,5 +1,5 @@
 export interface ICharacterInfoParams {
-  id: string;
+  id: number;
   name: string;
   species: string;
   status: string;
@@ -7,7 +7,7 @@ export interface ICharacterInfoParams {
 }
 
 export default class CharacterInfoEntity {
-  private _id: string;
+  private _id: number;
   private _name: string;
   private _species: string;
   private _status: string;
