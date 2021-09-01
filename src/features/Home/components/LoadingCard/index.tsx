@@ -4,12 +4,13 @@ import { tw } from "twind";
 const LoaderCard: React.FC = () => {
   return (
     <div
-      className={tw`border max-w-[240px] h-[280px] min-h-[280px] max-h-[280px] mx-auto rounded-sm shadow-card flex flex-col`}
+      data-testid="LoadingCard"
+      className={tw`border max-w-[240px] h-[280px] min-h-[280px] max-h-[280px] mx-auto rounded-sm shadow-2xl flex flex-col`}
     >
-      <div className={tw`rounded-t-xsm w-[240px] h-[168px]`}>
+      <div className={tw`rounded-t-sm w-[240px] h-[168px]`}>
         <Loading />
       </div>
-      <div className={tw`animate-pulse flex-grow px-md py-lg`}>
+      <div className={tw`animate-pulse flex-grow px-2 py-3`}>
         <div className={tw`space-y-2`}>
           <div className={tw`h-4 bg-gray-400 rounded w-3/4`}></div>
           <div className={tw`h-4 bg-gray-400 rounded`}></div>
