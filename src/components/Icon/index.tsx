@@ -28,9 +28,11 @@ const Icon: React.FC<IProps> = ({
     }
   };
 
+  if (!getPath(name)) return null;
+
   return (
     <svg
-      data-testid="cc-icon__svg"
+      data-testid="Icon"
       className={tw`fill-current ${className}`}
       width={width ? width : size}
       height={height ? height : size}
