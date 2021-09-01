@@ -11,6 +11,7 @@ const Home: React.FC = () => {
     totalPages,
     isError,
     currentPage,
+    count,
     handleChangeCurrentPage,
     handleChangeFilters,
   } = useCharacters();
@@ -26,6 +27,7 @@ const Home: React.FC = () => {
         isError={isError}
         characters={characters}
         totalPages={totalPages}
+        count={count}
         currentPage={currentPage}
         handleChangeCurrentPage={handleChangeCurrentPage}
       />

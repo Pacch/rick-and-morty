@@ -22,6 +22,7 @@ export default class HTTPCharacterRepository implements ICharacterRepository {
     status?: "alive" | "dead" | "unknown" | null;
   }): Promise<{
     pages: number;
+    count: number;
     characters: CharacterInfoEntity[];
   }> {
     const queryParams = {
@@ -41,6 +42,7 @@ export default class HTTPCharacterRepository implements ICharacterRepository {
     );
 
     return {
+      count: info?.count,
       pages: info?.pages,
       characters: charactersEntities,
     };
