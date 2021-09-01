@@ -5,6 +5,7 @@ import Icon from "components/Icon";
 interface IPropsNavigation {
   disabled?: boolean;
   children?: React.ReactNode;
+  testid?: string;
   onClick: () => void;
 }
 
@@ -12,9 +13,11 @@ const NavigationButton: React.FC<IPropsNavigation> = ({
   children,
   disabled,
   onClick,
+  testid,
 }) => {
   return (
     <button
+      data-testid={testid}
       disabled={disabled}
       onClick={onClick}
       className={tw` w-[60px] h-[60px] bg-green-400 rounded-full border-4 border-white focus:outline-none flex items-center justify-center ${
@@ -87,15 +90,20 @@ const Pagination: React.FC<Props> = ({
 
   return (
     <div
+      data-testid="Pagination"
       className={tw`flex items-center justify-center p-6 space-x-6 flex-col sm:flex-row fixed bottom-0 left-0 w-full`}
       style={{ backgroundColor: "rgba(255, 255, 255, 0.5)" }}
     >
       <div className={tw`flex items-center space-x-4`}>
-        <NavigationButton onClick={handlePrevPage} disabled={currentPage === 1}>
+        <NavigationButton
+          testid="Prev"
+          onClick={handlePrevPage}
+          disabled={currentPage === 1}
+        >
           <Icon name="chevron-left" className={tw`text-white`} size={35} />
         </NavigationButton>
         <div
-          className={tw`bg-white text-green-400 font-black text-xxlg px-4 py-2 rounded-sm`}
+          className={tw`bg-white text-green-400 font-black text-2xl px-4 py-2 rounded-sm`}
         >
           {currentPage} - {totalPages}
         </div>
@@ -103,6 +111,7 @@ const Pagination: React.FC<Props> = ({
         <NavigationButton
           onClick={handleNextPage}
           disabled={currentPage === totalPages}
+          testid="Next"
         >
           <Icon name="chevron-right" className={tw`text-white`} size={35} />
         </NavigationButton>
