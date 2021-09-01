@@ -1,14 +1,14 @@
 import { tw } from "twind";
 import createRange from "helpers/rangeHelper";
-import LoadingCard from "./LoadingCard";
-import LoaderPagination from "./LoaderPagination";
+import LoadingCard from "../LoadingCard";
+import LoaderPagination from "../LoaderPagination";
 
 const LoadingCards = () => {
   const NUMBERS_CARDS = 36;
   const ITEMS_LOADER = createRange({ end: NUMBERS_CARDS });
 
   return (
-    <div>
+    <div data-testid="LoadingCards">
       <LoaderPagination></LoaderPagination>
 
       <div
