@@ -16,7 +16,7 @@ Instalación:
 yarn install
 ```  
 
-Correr test  
+ejecutar test  
 ```
 yarn test 
 ```
