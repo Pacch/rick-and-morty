@@ -3,9 +3,9 @@
 ## Rick and Morty
 
 una aplicacion para buscar los personajes de Rick and Morty
-`
-Demo [https://rick-and-morty-blush.vercel.app](https://rick-and-morty-blush.vercel.app).
-`
+
+- Demo [https://rick-and-morty-blush.vercel.app](https://rick-and-morty-blush.vercel.app).
+
 #### Instalacion:  
 
 clonar este repositorio. Nececitas `node` y `npm` instalado globalmente.
@@ -13,16 +13,16 @@ clonar este repositorio. Nececitas `node` y `npm` instalado globalmente.
 
 Instalación:
 ```
-npm install o yarn install
+yarn install
 ```  
 
 Correr test  
 ```
-npm test o yarn test 
+yarn test 
 ```
 Levantar servidor
 ```
-npm start  o yarn start 
+yarn start 
 ```
 
 ## Imagenes del proyecto
