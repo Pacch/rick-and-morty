@@ -3,7 +3,7 @@ import ICharacterRepository from "../Repositories/ICharacterRepository";
 import CharacterInfoEntity, {
   ICharacterInfoParams,
 } from "../Entities/CharacterInfoEntity";
-  import { characterInfoEntity } from "../Entities";
+import { characterInfoEntity } from "../Entities";
 
 export default class HTTPCharacterRepository implements ICharacterRepository {
   private _fetcher: FetcherInput;
@@ -11,8 +11,6 @@ export default class HTTPCharacterRepository implements ICharacterRepository {
   constructor(fetcher: FetcherInput) {
     this._fetcher = fetcher;
   }
-
-  
 
   public async getCharacters({
     page,
