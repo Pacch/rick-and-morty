@@ -18,6 +18,7 @@ interface IProps {
   characters?: ICharacters[] | null;
   currentPage: number;
   totalPages?: number;
+  count?: number;
   handleChangeCurrentPage: (value: number) => void;
 }
 
@@ -27,6 +28,7 @@ const Characters: React.FC<IProps> = ({
   characters,
   currentPage,
   totalPages,
+  count,
   handleChangeCurrentPage,
 }) => {
   if (isLoading) {
@@ -38,6 +40,7 @@ const Characters: React.FC<IProps> = ({
   }
   return (
     <div className="grid gap-4 h-full flex-grow" data-testid="Characters">
+      <p className={tw`text-3xl font-black text-center`}>Results {count}</p>
       <div
         className={tw`flex-grow grid justify-center gap-4 
         grid-cols-[repeat(auto-fill,minmax(240px,1fr))]`}

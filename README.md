@@ -1,46 +1,80 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Rick and Morty
 
-In the project directory, you can run:
+una aplicacion para buscar los personajes de Rick and Morty
 
-### `yarn start`
+- Demo [https://rick-and-morty-blush.vercel.app](https://rick-and-morty-blush.vercel.app).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Instalacion:  
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+clonar este repositorio. Nececitas `node` y `npm` instalado globalmente.
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Instalación:
+```
+yarn install
+```  
 
-### `yarn build`
+ejecutar test  
+```
+yarn test 
+```
+Levantar servidor
+```
+yarn start 
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Imagenes del proyecto
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![241089193_207572731351905_9046596609163907940_n](https://user-images.githubusercontent.com/8399289/131635527-9d7bfe4b-b726-4fe3-a570-b87ead393a4f.png)
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Estructura de carpetas
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+ 📂 __rick\-and\-morty__
+   - 📄 [README.md](README.md)
+   - 📄 [package.json](package.json)
+   - 📂 __public__
+     - 📄 [favicon.ico](public/favicon.ico)
+     - 📄 [index.html](public/index.html)
+   - 📂 __src__
+     - 📂 __@domain__
+       - 📂 __Character__
+         - 📂 __Entities__
+         - 📂 __Infrastructure__
+         - 📂 __Repositories__
+         - 📂 __UseCases__
+       - 📂 __\_config__
+       - 📂 __\_shared__
+         - 📂 __Fetcher__
+     - 📂 __assets__
+       - 📂 __images__
+     - 📂 __components__
+       - 📂 __BackToTop__
+         - 📄 [index.test.tsx](src/components/BackToTop/index.test.tsx)
+         - 📄 [index.tsx](src/components/BackToTop/index.tsx)
+       - 📂 __Button__
+       - 📂 __Icon__
+       - 📂 __Layout__
+       - 📂 __Loading__
+       - 📂 __PageNotFound__
+     - 📂 __features__
+       - 📂 __Home__
+         - 📂 __components__
+           - 📂 __CardItem__
+             - 📄 [index.test.tsx](src/features/Home/components/CardItem/index.test.tsx)
+             - 📄 [index.tsx](src/features/Home/components/CardItem/index.tsx)    
+           - 📂 __Characters__
+           - 📂 __LoadingCard__
+           - 📂 __LoadingCards__
+           - 📂 __Pagination__
+           - 📂 __SearchForm__
+         - 📂 __hooks__
+       - 📂 __types__
+     - 📂 __helpers__
+     - 📂 __hooks__
+     - 📂 __routes__
+     - 📂 __state__
+     - 📂 __styles__

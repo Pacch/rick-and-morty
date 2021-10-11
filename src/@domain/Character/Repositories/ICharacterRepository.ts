@@ -5,5 +5,9 @@ export default interface ICharacterRepository {
     page: number;
     name?: string;
     status?: "alive" | "dead" | "unknown" | null;
-  }): Promise<{ pages: number; characters: CharacterInfoEntity[] }>;
+  }): Promise<{
+    count: number;
+    pages: number;
+    characters: CharacterInfoEntity[];
+  }>;
 }
