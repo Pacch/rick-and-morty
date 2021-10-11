@@ -37,6 +37,7 @@ const useCharacters = () => {
     characters: data?.characters,
     isLoadingFetching,
     totalPages: data?.pages,
+    count: data?.count,
     isError,
     currentPage,
     handleSubmit,

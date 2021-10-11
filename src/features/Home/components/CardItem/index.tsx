@@ -9,7 +9,7 @@ interface IProps {
 
 const CardItem: React.FC<IProps> = ({ image, name, status, species }) => {
   return (
-    <div className={tw`flex-col`} data-testid="CardItem rounded-md">
+    <div className={tw`flex-col rounded-md`} data-testid="CardItem">
       <div
         className={tw`p-2 max-w-[240px] mx-auto rounded-sm shadow-2xl flex flex-col h-full rounded-md`}
         style={{ backgroundColor: "rgba(0, 0, 0, 0.8)" }}

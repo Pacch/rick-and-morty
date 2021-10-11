@@ -8,6 +8,9 @@ const LoadingCards = () => {
 
   return (
     <div data-testid="LoadingCards">
+      <div className={tw`max-w-[140px] mx-auto h-[36px] mb-4 animate-pulse`}>
+        <div className={tw`h-5 bg-black rounded w-full`}></div>
+      </div>
       <div
         className={tw`grid justify-center gap-4 
         grid-cols-[repeat(auto-fill,minmax(240px,1fr))]`}

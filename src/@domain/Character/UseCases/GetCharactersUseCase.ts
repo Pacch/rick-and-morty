@@ -14,7 +14,7 @@ export default class GetCharactersUseCase {
   }
 
   public async execute({ page, name, status }: IFilterParams) {
-    const { characters, pages } = await this._repository.getCharacters({
+    const { characters, pages, count } = await this._repository.getCharacters({
       page,
       name,
       status,
@@ -22,6 +22,7 @@ export default class GetCharactersUseCase {
     const entitiesObj = characters.map((character) => character.toJSON());
 
     return {
+      count,
       pages,
       characters: entitiesObj,
     };
