@@ -39,7 +39,7 @@ const Characters: React.FC<IProps> = ({
     return <NotFound />;
   }
   return (
-    <div className="grid gap-4 h-full flex-grow" data-testid="Characters">
+    <div className="grid gap-4 h-full flex-grow " data-testid="Characters">
       <p className={tw`text-3xl font-black text-center`}>Results {count}</p>
       <div
         className={tw`flex-grow grid justify-center gap-4 
