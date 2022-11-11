@@ -4,10 +4,3 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-    ignore:
-      - dependency-name: "loader-utils"
-      - dependency-name: "react-scripts"
-      - dependency-name: "@storybook/addon-essentials"
-        update-types: ["version-update:semver-patch"]
-      - dependency-name: "@storybook/react"
-        update-types: ["version-update:semver-patch"]
