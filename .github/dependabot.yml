@@ -7,4 +7,5 @@ updates:
     ignore:
       - dependency-name: "loader-utils"
       - dependency-name: "react-scripts"
-      - dependency-name: "@storybook/*"
+      - dependency-name: "@storybook/addon-essentials"
+      - dependency-name: "@storybook/react"
